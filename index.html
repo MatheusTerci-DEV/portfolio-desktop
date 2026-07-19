@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050610" />
+    <meta name="description" content="Portfólio interativo em uma viagem espacial." />
+    <title>Portfólio — Missão Espacial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="journey.css" />
+    <link rel="stylesheet" href="launch-v2.css" />
+    <link rel="stylesheet" href="palette-v2.css" />
+    <link rel="stylesheet" href="galaxy-v3.css" />
+    <link rel="stylesheet" href="layout-fixes.css" />
+    <link rel="stylesheet" href="business-card-v2.css" />
+    <link rel="stylesheet" href="trajectory-v2.css" />
+    <link rel="stylesheet" href="skills-v2.css" />
+    <link rel="stylesheet" href="projects-v2.css" />
+    <link rel="stylesheet" href="interaction-v2.css" />
+    <link rel="stylesheet" href="skills-v3.css" />
+    <link rel="stylesheet" href="contact-v2.css" />
+    <link rel="stylesheet" href="launch-v3.css" />
+    <link rel="stylesheet" href="mobile-fixes.css" />
+    <link rel="stylesheet" href="desktop-v2.css" />
+    <link rel="stylesheet" href="journey-desktop-v3.css" />
+  </head>
+  <body class="preflight">
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <div class="noise" aria-hidden="true"></div>
+
+    <section class="launch-screen" id="launch-screen" aria-labelledby="launch-title">
+      <div class="launch-copy">
+        <div class="launch-astronaut" aria-hidden="true">
+          <div class="astro-glow"></div>
+          <img src="assets/astronaut-3d.png" alt="" />
+        </div>
+        <span>UMA JORNADA INTERATIVA</span>
+        <h1 id="launch-title">Pronto para<br><em>viajar?</em></h1>
+        <div class="launch-divider" aria-hidden="true"><i></i><span>DESTINO: UMA NOVA DESCOBERTA</span><i></i></div>
+        <button id="launch-button" type="button" aria-label="Iniciar viagem espacial">
+          <img src="assets/spaceship-3d.png" alt="" />
+          <span>MATHEUS TERCI</span>
+          <small>TOQUE NA NAVE PARA DECOLAR</small>
+        </button>
+      </div>
+    </section>
+    <div class="warp-transition" id="warp-transition" aria-hidden="true">
+      <div class="loading-route"><i></i><i></i><i></i></div>
+      <img class="loading-ship" src="assets/spaceship-3d.png" alt="" />
+      <div class="loading-copy">
+        <span>EM TRÂNSITO</span>
+        <strong id="loading-destination">PRÓXIMO DESTINO</strong>
+        <div class="recruiter-messages" aria-live="polite">
+          <small>Bem-vindo à sua viagem.</small>
+          <small>Aproveite cada descoberta.</small>
+        </div>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <button class="brand" id="restart-journey" type="button" aria-label="Reiniciar viagem"><span class="brand-dot"></span> REINICIAR</button>
+      <nav aria-label="Navegação principal">
+        <a href="#trajetoria">Trajetória</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a>
+      </nav>
+      <span class="signal"><i></i> Disponível</span>
+    </header>
+
+    <aside class="mission-rail" aria-label="Progresso da missão">
+      <span>MISSÃO</span><div class="rail-line"><i id="progress"></i></div><strong id="chapter">01</strong><small>/ 05</small>
+    </aside>
+
+    <main id="journey">
+      <section id="inicio" class="chapter hero" data-chapter="01">
+        <div class="bio-card reveal">
+          <div class="bio-info">
+            <div class="eyebrow">CARTÃO DE VISITAS // 2026</div>
+            <h1>Matheus <em>Terci.</em></h1>
+            <p class="bio-role" data-profile="headline">Desenvolvedor back-end em formação, criando APIs e soluções com C#, .NET, Python e SQL Server.</p>
+            <p class="bio-summary">Estudante de Análise e Desenvolvimento de Sistemas na UNIP, em transição para tecnologia. Gosto de transformar aprendizado em projetos práticos, com foco em back-end, APIs REST e bancos de dados. Busco minha primeira oportunidade para aprender, contribuir e evoluir com uma equipe.</p>
+          </div>
+          <div class="destination-panel" aria-label="Destinos da viagem">
+            <span class="destination-label">ESCOLHA O PRÓXIMO DESTINO</span>
+            <div class="destination-grid">
+              <a href="#trajetoria"><img src="assets/planet-trajectory.png" alt="" /><strong>Trajetória</strong><small>Experiências</small></a>
+              <a href="#habilidades"><img src="assets/planet-skills.png" alt="" /><strong>Habilidades</strong><small>Tecnologias</small></a>
+              <a href="#projetos"><img src="assets/planet-projects.png" alt="" /><strong>Projetos</strong><small>Missões criadas</small></a>
+              <a href="#contato"><img src="assets/planet-contact.png" alt="" /><strong>Contato</strong><small>Nova conexão</small></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="astronaut-wrap" id="astronaut" aria-hidden="true">
+        <div class="astro-glow"></div>
+        <img src="assets/astronaut-3d.png" alt="" />
+      </div>
+
+      <section id="trajetoria" class="chapter journey" data-chapter="02">
+        <div class="section-heading reveal"><span>02 · REGISTRO DE MISSÃO · 2026</span><h2>Experiências que me<br>trouxeram até aqui.</h2><p>Uma trajetória construída com responsabilidade, organização e vontade constante de aprender.</p></div>
+        <div class="timeline" id="timeline">
+          <article class="timeline-item reveal"><time>2023—24</time><div><h3>Estagiário Administrativo · CAIXA</h3><p>Apoio administrativo, digitalização de dossiês e atualização de cadastros.</p></div><span>01</span></article>
+          <article class="timeline-item reveal"><time>2025</time><div><h3>Jovem Aprendiz · CNH</h3><p>Primeira etapa profissional na operação da empresa, em Sorocaba.</p></div><span>02</span></article>
+          <article class="timeline-item reveal"><time>2025—AGORA</time><div><h3>Operador Logístico · CNH</h3><p>Operações logísticas, conferência de materiais e movimentação de itens entre áreas.</p></div><span>03</span></article>
+        </div>
+      </section>
+
+      <section id="habilidades" class="chapter skills" data-chapter="03">
+        <div class="section-heading reveal"><span>03 / SISTEMAS DE BORDO / 2026</span><h2>Tecnologias que movem<br>minhas missões.</h2><p>Uma visão direta do que já aplico na prática e das habilidades que continuo desenvolvendo.</p></div>
+        <div class="skill-deck reveal" id="skills-grid">
+          <nav class="skill-nav" aria-label="Categorias de conhecimento"><button class="active" type="button" data-skill="0"><i class="violet"></i><span><b>Back-end .NET</b><small>NÚCLEO PRINCIPAL</small></span><em>01</em></button><button type="button" data-skill="1"><i class="cyan"></i><span><b>APIs & Dados</b><small>INTEGRAÇÃO</small></span><em>02</em></button><button type="button" data-skill="2"><i class="amber"></i><span><b>Em evolução</b><small>PRÓXIMA ÓRBITA</small></span><em>03</em></button></nav>
+          <article class="skill-focus" data-tone="violet"><div class="focus-orbit"><div class="skill-orb violet"><i></i></div><span>CONHECIMENTO EM FOCO</span></div><div class="focus-copy"><small id="skill-status">APLICAÇÃO PRÁTICA</small><h3 id="skill-title">Back-end .NET</h3><p id="skill-description">Construção da lógica, regras de negócio e integração de aplicações.</p><div class="skill-tags" id="skill-tags"><em>C#</em><em>.NET 8</em><em>ASP.NET Core</em><em>Entity Framework</em></div></div><div class="focus-index"><b id="skill-current">01</b><span>/ 03</span></div></article>
+        </div>
+      </section>
+
+      <section id="projetos" class="chapter projects" data-chapter="04">
+        <div class="section-heading reveal"><span>04 / PROJETO EM DESTAQUE / 2026</span><h2>Da regra de negócio<br>à API funcionando.</h2><p>Um estudo de caso sobre como transformei requisitos de estoque em uma aplicação back-end organizada.</p></div>
+        <div class="project-list" id="project-list">
+          <article class="project reveal"><div class="project-visual"><div class="api-console project-monitor"><header><i></i><span>stock-control / api</span><b>ONLINE</b></header><div class="api-body monitor-screen"><div class="api-route"><small>CLIENTE</small><strong>REST API</strong><em>Swagger</em></div><div class="api-core"><span>GET</span><span>POST</span><span>PUT</span><span>DELETE</span><b>ASP.NET<br>CORE</b></div><div class="database"><i></i><strong>SQL</strong><small>SERVER</small></div></div><footer><span>PRODUTOS</span><span>ENDEREÇOS</span><span>NOTAS FISCAIS</span><span>ESTOQUE</span></footer></div></div><div class="project-copy"><small>PROJETO ACADÊMICO / 2025—2026</small><h3>Sistema de Controle de Estoque</h3><p>API desenvolvida em equipe para centralizar produtos, endereços, notas fiscais, entradas e saídas de materiais.</p><div class="project-results"><span><b>01</b> Modelagem e banco de dados</span><span><b>02</b> Endpoints e regras de negócio</span><span><b>03</b> Testes e documentação Swagger</span></div><div class="project-tags"><span>C#</span><span>.NET 8</span><span>SQL SERVER</span><span>REST</span><span>EF CORE</span></div></div></article>
+        </div>
+      </section>
+
+      <section id="contato" class="chapter contact" data-chapter="05">
+        <div class="contact-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="contact-shell reveal">
+          <header><div><span class="eyebrow">05 / CANAL DE COMUNICAÇÃO / 2026</span><h2>Vamos iniciar<br><em>uma nova missão?</em></h2></div><div class="availability"><i></i><span><b>DISPONÍVEL</b><small>Estágio e oportunidades iniciais em TI</small></span></div></header>
+          <div class="contact-intro"><p>Estou construindo minha carreira em desenvolvimento back-end e procuro uma equipe onde eu possa aprender, contribuir e transformar conhecimento em soluções reais.</p><span>Escolha um canal para continuar a conversa.</span></div>
+          <div class="contact-links">
+            <a class="contact-card linkedin" href="https://www.linkedin.com/in/matheus-terci-9075a5325/" target="_blank" rel="noreferrer"><div class="social-mark">in</div><span><small>PERFIL PROFISSIONAL</small><b>LinkedIn</b><em>/in/matheus-terci</em></span><strong>↗</strong></a>
+            <a class="contact-card github" href="https://github.com/MatheusTerci-DEV" target="_blank" rel="noreferrer"><div class="social-mark">GH</div><span><small>CÓDIGO E PROJETOS</small><b>GitHub</b><em>@MatheusTerci-DEV</em></span><strong>↗</strong></a>
+          </div>
+          <footer><span>MATHEUS TERCI / PORTFÓLIO 2026</span><span>SOROCABA, SÃO PAULO</span></footer>
+        </div>
+      </section>
+    </main>
+    <div class="journey-controls" aria-label="Controles da viagem">
+      <button id="prev-chapter" type="button" aria-label="Voltar etapa">←</button>
+      <span><b id="control-current">01</b> / 05</span>
+      <button id="next-chapter" type="button" aria-label="Avançar etapa">→</button>
+    </div>
+    <div class="interaction-pilot" id="interaction-pilot" aria-hidden="true"><span>GUIA DE MISSÃO</span><img src="assets/astronaut-3d.png" alt="" /></div>
+    <script src="config.js"></script><script src="app.js"></script>
+  </body>
+</html>

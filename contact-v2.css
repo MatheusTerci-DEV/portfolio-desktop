@@ -1,0 +1,29 @@
+.contact{padding:42px 6vw 70px!important;display:grid!important;place-items:center!important;text-align:left!important;background:radial-gradient(circle at 50% 110%,rgba(80,55,163,.25),transparent 48%)!important}
+.contact:before{content:"";position:absolute;width:480px;height:480px;right:-230px;top:-250px;border:1px solid rgba(114,230,225,.08);border-radius:50%;box-shadow:0 0 140px rgba(114,230,225,.035)}
+.contact-shell{position:relative;width:min(100%,1080px);border:1px solid rgba(180,191,225,.17);background:linear-gradient(145deg,rgba(14,19,33,.9),rgba(6,9,18,.8));box-shadow:0 30px 90px rgba(0,0,0,.38);padding:36px 40px 22px;overflow:hidden}
+.contact-shell:before{content:"";position:absolute;width:420px;height:420px;left:-240px;bottom:-300px;border:1px solid rgba(144,116,255,.13);border-radius:50%;box-shadow:0 0 100px rgba(114,86,215,.08)}
+.contact-shell>header{display:flex;align-items:flex-start;justify-content:space-between;gap:30px;border-bottom:1px solid rgba(255,255,255,.09);padding-bottom:25px}
+.contact .eyebrow{display:block;margin:0 0 13px;font:8px 'DM Mono';letter-spacing:.2em;color:#72e6e1}
+.contact h2{font-size:clamp(39px,4.2vw,62px);line-height:.92;letter-spacing:-.055em;margin:0!important;text-align:left}
+.availability{display:flex;align-items:center;gap:11px;min-width:240px;margin-top:8px;padding:13px 15px;border:1px solid rgba(114,230,225,.18);background:rgba(114,230,225,.035)}
+.availability>i{width:8px;height:8px;border-radius:50%;background:#72e6e1;box-shadow:0 0 16px rgba(114,230,225,.9);animation:statusPulse 2.4s ease-in-out infinite}
+.availability>span{display:grid;gap:4px}.availability b{font:7px 'DM Mono';letter-spacing:.15em;color:#72e6e1}.availability small{font:9px Manrope;color:#8f97a9}
+.contact-intro{display:flex;justify-content:space-between;align-items:end;gap:40px;padding:22px 0}
+.contact-intro p{max-width:630px;margin:0;color:#9da4b5;font-size:13px;line-height:1.65}
+.contact-intro span{font:6px 'DM Mono';letter-spacing:.13em;color:#646c7f;white-space:nowrap}
+.contact-links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-card{position:relative;min-height:130px;display:grid;grid-template-columns:52px 1fr 25px;align-items:center;gap:17px;padding:22px;border:1px solid rgba(180,191,225,.15);background:rgba(7,11,21,.62);transition:.3s;overflow:hidden}
+.contact-card:before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(114,230,225,.07),transparent 45%);opacity:0;transition:.3s}
+.contact-card.github:before{background:linear-gradient(105deg,rgba(145,115,255,.1),transparent 45%)}
+.contact-card:hover{transform:translateY(-4px);border-color:rgba(114,230,225,.34);box-shadow:0 20px 45px rgba(0,0,0,.22)}.contact-card:hover:before{opacity:1}
+.social-mark{position:relative;z-index:1;width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(114,230,225,.28);font:500 16px 'DM Mono';color:#72e6e1;background:rgba(114,230,225,.05)}
+.github .social-mark{border-color:rgba(154,130,255,.28);color:#b7a5ff;background:rgba(145,115,255,.06);font-size:11px}
+.contact-card>span{position:relative;z-index:1;display:grid;gap:3px}.contact-card small{font:6px 'DM Mono';letter-spacing:.14em;color:#697186}.contact-card b{font-size:20px;color:#eef0f7}.contact-card em{font:normal 9px 'DM Mono';color:#858da0}
+.contact-card>strong{position:relative;z-index:1;font:16px Manrope;color:#687084;transition:.3s}.contact-card:hover>strong{color:#72e6e1;transform:translate(3px,-3px)}
+.contact-shell footer{position:static!important;display:flex!important;justify-content:space-between!important;margin-top:22px;padding-top:17px;border-top:1px solid rgba(255,255,255,.08);font:6px 'DM Mono'!important;letter-spacing:.13em;color:#5f6779!important}
+.contact-orbit{opacity:.45}
+body[data-chapter="4"] .astronaut-wrap{opacity:0;visibility:hidden}
+@keyframes statusPulse{50%{opacity:.45;transform:scale(.78)}}
+@media(max-height:820px) and (min-width:901px){.contact-shell{padding:27px 32px 18px}.contact-shell>header{padding-bottom:19px}.contact h2{font-size:47px}.contact-intro{padding:17px 0}.contact-card{min-height:108px;padding:17px}.contact-shell footer{margin-top:17px}}
+@media(max-width:760px){.contact{place-items:start center!important;padding-top:32px!important;overflow-y:auto!important}.contact-shell{padding:25px}.contact-shell>header,.contact-intro{display:grid}.availability{min-width:0}.contact-intro{gap:14px}.contact-links{grid-template-columns:1fr}.contact-intro span{white-space:normal}.contact-shell footer{gap:14px;flex-wrap:wrap!important}}
+@media(prefers-reduced-motion:reduce){.availability>i{animation:none}}

@@ -1,0 +1,94 @@
+#stars{
+  background-color:#03050c;
+  background-image:
+    linear-gradient(rgba(2,5,13,.28),rgba(2,5,13,.44)),
+    url("assets/galaxy-cinematic.png");
+  background-size:108% 108%;
+  background-position:center;
+  animation:galaxyBreath 26s ease-in-out infinite alternate;
+}
+.launch-screen{background:linear-gradient(180deg,rgba(2,4,11,.08),rgba(2,4,11,.24))}
+.launch-screen:before,.launch-screen:after{display:none}
+.warp-transition{
+  background:
+    linear-gradient(180deg,rgba(2,4,12,.64),rgba(2,4,12,.82)),
+    url("assets/galaxy-cinematic.png") center/cover;
+}
+.warp-transition:before,.warp-transition:after{display:none}
+.loading-route{
+  position:absolute;
+  left:8vw;
+  right:8vw;
+  top:42%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#6c7aa755 15%,#7ce9e288 50%,#6c7aa755 85%,transparent);
+  box-shadow:0 0 18px #72e6e144;
+}
+.loading-route:before,.loading-route:after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:8px;height:8px;
+  border:1px solid #aeb9da88;
+  border-radius:50%;
+  transform:translateY(-50%);
+  box-shadow:0 0 15px #72e6e177;
+}
+.loading-route:before{left:0}.loading-route:after{right:0}
+.loading-route i{
+  position:absolute;top:50%;
+  width:3px;height:3px;border-radius:50%;background:#fff;
+  box-shadow:0 0 8px #fff;
+}
+.loading-route i:nth-child(1){left:25%}.loading-route i:nth-child(2){left:50%}.loading-route i:nth-child(3){left:75%}
+.loading-ship{
+  position:absolute;
+  z-index:2;
+  top:42%;
+  left:50%;
+  width:210px;height:135px;object-fit:contain;
+  transform:translate(-50%,-50%);
+  filter:drop-shadow(-22px 4px 18px #70e4df88);
+}
+.warp-transition.active .loading-ship{animation:shipLoading 2.6s ease-in-out infinite}
+.loading-copy{position:absolute;left:50%;top:58%;width:min(88vw,520px);transform:translateX(-50%);text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px}
+.loading-copy span{font:8px 'DM Mono';letter-spacing:.3em;color:var(--cyan)}
+.loading-copy strong{font:500 13px Manrope;letter-spacing:.08em;color:#eef0f7}
+.loading-copy:after{content:"";width:220px;height:1px;margin-top:42px;background:linear-gradient(90deg,var(--cyan),var(--lavender));transform:scaleX(0);transform-origin:left;box-shadow:0 0 12px #72e6e166}
+.warp-transition.active .loading-copy:after{animation:loadingProgress 3.7s linear forwards}
+@keyframes shipLoading{
+  0%,100%{transform:translate(-50%,-50%) translateY(5px) rotate(-2deg) scale(.96);filter:drop-shadow(-18px 6px 17px #70e4df66)}
+  50%{transform:translate(-50%,-50%) translateY(-9px) rotate(2deg) scale(1.03);filter:drop-shadow(-27px 10px 24px #70e4dfaa)}
+}
+.recruiter-messages{position:relative;width:100%;height:18px;margin-top:8px}
+.recruiter-messages small{position:absolute;inset:0;opacity:0;font:400 10px 'DM Mono';letter-spacing:.08em;color:#aeb4c6;animation:recruiterMessage 4s ease-in-out infinite}
+.recruiter-messages small:nth-child(2){animation-delay:2s}
+@keyframes recruiterMessage{0%{opacity:0;transform:translateY(5px)}8%,43%{opacity:1;transform:none}50%,100%{opacity:0;transform:translateY(-4px)}}
+@keyframes loadingProgress{to{transform:scaleX(1)}}
+@keyframes galaxyBreath{
+  0%{background-position:46% 48%;filter:brightness(.88) saturate(.86)}
+  50%{filter:brightness(.96) saturate(.94)}
+  100%{background-position:54% 52%;filter:brightness(.91) saturate(.9)}
+}
+body.warping .astronaut-wrap{transform:none!important}
+@media(max-width:600px){.loading-ship{width:160px;height:105px}.loading-copy{top:56%}.loading-route{top:40%}}
+@media(prefers-reduced-motion:reduce){#stars{animation:none}.warp-transition.active .loading-ship{animation-timing-function:linear}}
+
+/* Immersive, edge-to-edge journey */
+.topbar,.journey-controls,.mission-rail,.orbit-label,.contact footer{display:none!important}
+body,html{width:100%;height:100%;overflow:hidden!important;background:#03050c}
+main{inset:0!important;width:100vw;height:100vh;overflow:hidden}
+.chapter{
+  width:100vw;
+  height:100vh;
+  max-width:100vw;
+  overflow-x:hidden!important;
+  overflow-y:auto;
+  scrollbar-width:none;
+  padding-top:78px;
+  padding-bottom:90px;
+}
+.chapter::-webkit-scrollbar{display:none;width:0;height:0}
+.travel-next{bottom:28px}
+.hero{padding-top:78px}
+@media(max-width:900px){.chapter{padding-top:58px;padding-bottom:92px}.travel-next{bottom:24px}}

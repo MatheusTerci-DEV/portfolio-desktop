@@ -1,0 +1,63 @@
+:root{
+  --ink:#f2f0ea;
+  --paper:#f7f5ef;
+  --silver:#b9bdcb;
+  --muted:#858b9e;
+  --cyan:#72e6e1;
+  --cyan-soft:#b4f4ef;
+  --violet:#9278ff;
+  --lavender:#c7bcff;
+  --blue:#73a8ff;
+  --line:rgba(195,205,235,.15);
+}
+#stars{
+  background:
+    radial-gradient(ellipse at 74% 28%,rgba(112,67,196,.28) 0,rgba(53,31,110,.12) 24%,transparent 51%),
+    radial-gradient(ellipse at 28% 63%,rgba(28,105,142,.22) 0,rgba(11,49,78,.13) 28%,transparent 56%),
+    radial-gradient(ellipse at 48% 112%,rgba(61,45,133,.24),transparent 48%),
+    linear-gradient(145deg,#03050c 0%,#070b19 44%,#050611 100%);
+}
+.launch-screen{
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 65% 32%,rgba(106,63,193,.18),transparent 42%),
+    radial-gradient(ellipse at 33% 64%,rgba(25,116,150,.14),transparent 45%);
+}
+.launch-screen:before,.launch-screen:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  border-radius:50%;
+  filter:blur(70px);
+  opacity:.42;
+  animation:nebulaDrift 15s ease-in-out infinite alternate;
+}
+.launch-screen:before{width:42vw;height:20vw;left:8vw;top:46%;background:linear-gradient(100deg,#0b6b8c66,#4e3aa955);transform:rotate(-13deg)}
+.launch-screen:after{width:34vw;height:22vw;right:8vw;top:12%;background:linear-gradient(110deg,#7047bb66,#202b7655);animation-delay:-6s}
+@keyframes nebulaDrift{to{transform:translate(4vw,-2vh) rotate(7deg) scale(1.08)}}
+.launch-copy>span,.eyebrow,.section-heading>span{color:var(--cyan);text-shadow:0 0 22px rgba(114,230,225,.24)}
+.launch-copy h1,.hero h1,.section-heading h2,.contact h2{color:var(--paper)}
+.launch-copy h1 em,.hero h1 em,.contact h2 em{
+  -webkit-text-stroke:1px rgba(199,188,255,.78);
+  text-shadow:0 0 42px rgba(126,96,235,.15);
+}
+.hero-copy,.timeline-item p,.project-copy p,.contact>p{color:var(--silver)}
+.timeline-item time,.project-copy small{color:var(--cyan)}
+.timeline-item h3,.skill-card h3,.project-copy h3{color:#eef0f7}
+.skill-card p{color:#9ca2b6}
+.topbar{color:#d9dce8}.topbar nav{color:#9da3b6}.topbar nav a:hover{color:var(--cyan-soft)}
+.brand-dot,.signal i{background:var(--cyan);box-shadow:0 0 15px rgba(114,230,225,.75)}
+.launch-copy button>span{
+  color:#e3e5ef;
+  border-color:rgba(169,181,220,.24);
+  background:linear-gradient(180deg,rgba(20,25,43,.96),rgba(7,10,19,.96));
+}
+.launch-copy button>span:before{color:var(--cyan)}
+.launch-copy button small{color:#8e94a8}.launch-copy button:hover small{color:var(--cyan-soft)}
+.journey-controls span{color:#82899d}.journey-controls b{color:var(--cyan)}
+.travel-next{border-color:rgba(160,174,215,.25);color:#e8e9f1}.travel-next b{color:var(--cyan)}
+.btn.primary{background:linear-gradient(135deg,#f5f2eb,#dce4ed);color:#090b13}
+.btn.ghost{color:#daddE8;border-color:rgba(180,192,225,.22)}
+.mail{color:var(--cyan-soft);border-color:rgba(114,230,225,.38)}
+@media(prefers-reduced-motion:reduce){.launch-screen:before,.launch-screen:after{animation:none}}

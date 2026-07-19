@@ -1,0 +1,119 @@
+.launch-screen{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-rows:1fr;
+  place-items:center;
+  padding:32px;
+}
+.launch-copy{
+  width:min(92vw,720px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  transform:none;
+}
+.launch-astronaut{
+  position:relative;
+  width:112px;
+  height:132px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+  grid-column:auto;
+  grid-row:auto;
+}
+.launch-astronaut img{
+  position:relative;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 18px 22px #0009);
+  animation:iconFloat 4.5s ease-in-out infinite;
+}
+.launch-astronaut .astro-glow{
+  width:80px;
+  height:80px;
+  background:#6958e844;
+  filter:blur(25px);
+}
+.launch-copy>span{
+  margin-top:2px;
+  font-size:9px;
+}
+.launch-copy h1{
+  margin:14px 0 8px;
+  font-size:clamp(58px,7vw,106px);
+  line-height:.85;
+}
+.launch-copy button{
+  position:relative;
+  width:260px;
+  height:178px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  margin-top:10px;
+  border:0;
+  background:none;
+  color:#fff;
+}
+.launch-copy button img{
+  width:230px;
+  height:118px;
+  object-fit:contain;
+  filter:drop-shadow(0 17px 20px #000c);
+  transition:transform .35s,filter .35s;
+}
+.launch-copy button>span{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  bottom:22px;
+  transform:translateX(-50%);
+  min-width:156px;
+  padding:7px 12px 6px;
+  border:1px solid #ffffff26;
+  border-radius:2px;
+  background:linear-gradient(180deg,#141827e8,#090b13e8);
+  box-shadow:0 8px 25px #0007,inset 0 1px #ffffff12;
+  font:500 7px 'DM Mono';
+  letter-spacing:.18em;
+  color:#d5d7e2;
+  opacity:1;
+  pointer-events:none;
+}
+.launch-copy button>span:before{
+  content:"MT";
+  display:inline-grid;
+  place-items:center;
+  width:18px;
+  height:14px;
+  margin-right:9px;
+  border-right:1px solid #ffffff20;
+  color:var(--cyan);
+  letter-spacing:0;
+}
+.launch-copy button small{
+  position:absolute;
+  bottom:-3px;
+  font:8px 'DM Mono';
+  letter-spacing:.22em;
+  color:#7c7e8d;
+  transition:color .3s;
+}
+.launch-copy button:hover{transform:none;box-shadow:none}
+.launch-copy button:hover img{transform:translateY(-7px) scale(1.06);filter:drop-shadow(0 25px 28px #6c55ff66)}
+.launch-copy button:hover small{color:var(--cyan)}
+@keyframes iconFloat{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+@media(max-width:560px){
+  .launch-screen{padding:18px}
+  .launch-copy{width:100%}
+  .launch-astronaut{width:86px;height:102px;margin-bottom:5px}
+  .launch-copy h1{font-size:55px;margin:10px 0 3px}
+  .launch-copy button{width:230px;height:135px;margin-top:2px}
+  .launch-copy button img{width:205px;height:105px}
+  .launch-copy button{height:160px}
+  .launch-copy button>span{bottom:19px;font-size:6px}
+}

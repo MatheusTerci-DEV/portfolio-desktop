@@ -1,0 +1,72 @@
+.journey{
+  padding:48px 6vw 90px!important;
+  justify-content:center!important;
+  align-items:center;
+}
+.journey .section-heading{
+  width:min(100%,1180px);
+  margin:0 auto 28px;
+  text-align:center;
+}
+.journey .section-heading h2{
+  max-width:none;
+  font-size:clamp(44px,4.4vw,68px);
+  line-height:.94;
+}
+.journey .section-heading p{
+  max-width:680px;
+  margin:15px auto 0;
+  color:#9298aa;
+  font-size:13px;
+  line-height:1.55;
+}
+.journey .timeline{
+  width:min(100%,1180px);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.journey .timeline-item{
+  position:relative;
+  min-height:255px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+  padding:28px 25px 23px;
+  border:1px solid rgba(180,191,225,.16);
+  background:linear-gradient(145deg,rgba(13,18,32,.78),rgba(6,9,18,.68));
+  box-shadow:0 22px 55px #0004;
+  transition:.3s;
+}
+.journey .timeline-item:hover{transform:translateY(-5px);border-color:rgba(114,230,225,.3);background:linear-gradient(145deg,rgba(16,23,39,.9),rgba(7,11,21,.82))}
+.journey .timeline-item:last-child{border-color:rgba(114,230,225,.3);box-shadow:0 25px 65px rgba(27,111,119,.09)}
+.journey .timeline-item:last-child:before{
+  content:"ATUAL · 2026";
+  position:absolute;
+  right:19px;top:18px;
+  padding:5px 7px;
+  border:1px solid rgba(114,230,225,.22);
+  font:7px 'DM Mono';
+  letter-spacing:.13em;
+  color:var(--cyan);
+}
+.journey .timeline-item time{font-size:9px;letter-spacing:.12em;margin-bottom:38px}
+.journey .timeline-item h3{font-size:22px;line-height:1.12;margin:0 0 13px}
+.journey .timeline-item p{font-size:13px;line-height:1.55;color:#9ea4b5}
+.journey .timeline-item>span{position:absolute;right:20px;bottom:17px;font:9px 'DM Mono';color:#555c70}
+body[data-chapter="1"] .astronaut-wrap{opacity:0;visibility:hidden}
+@media(max-height:820px) and (min-width:901px){
+  .journey{padding-top:30px!important}
+  .journey .section-heading{margin-bottom:20px}
+  .journey .section-heading h2{font-size:50px}
+  .journey .timeline-item{min-height:225px;padding:23px 21px 19px}
+  .journey .timeline-item time{margin-bottom:26px}
+}
+@media(max-width:900px){
+  .journey{justify-content:flex-start!important;padding:38px 6vw 96px!important}
+  .journey .section-heading h2{font-size:42px}
+  .journey .timeline{grid-template-columns:1fr;overflow-y:auto;scrollbar-width:none}
+  .journey .timeline-item{min-height:190px}
+}

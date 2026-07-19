@@ -1,0 +1,94 @@
+/* One-screen chapter composition */
+.chapter:not(.hero):not(.contact){
+  justify-content:flex-start;
+  padding:48px 7vw 92px;
+}
+.section-heading{margin:0 0 30px}
+.section-heading>span{display:block;margin-bottom:12px}
+.section-heading h2{
+  max-width:1050px;
+  font-size:clamp(42px,4.4vw,70px);
+  line-height:.96;
+}
+
+/* Experience */
+.journey .section-heading{margin-bottom:24px}
+.timeline{
+  width:min(970px,72vw);
+  max-width:none;
+  margin:0 auto;
+}
+.timeline-item{
+  grid-template-columns:150px 1fr 28px;
+  gap:24px;
+  padding:18px 0;
+}
+.timeline-item h3{font-size:20px;margin-bottom:5px}
+.timeline-item p{font-size:14px;line-height:1.45}
+
+/* Skills */
+.skills .section-heading{margin-bottom:28px}
+.skill-grid{gap:14px}
+.skill-card{
+  height:min(49vh,390px);
+  min-height:310px;
+  padding:22px;
+}
+.skill-orb{width:120px;height:120px;margin:28px auto}
+.skill-card h3{left:22px;bottom:58px;font-size:19px}
+.skill-card p{left:22px;right:22px;bottom:18px;font-size:10px}
+
+/* Projects */
+.projects{padding-bottom:92px!important}
+.projects .section-heading{margin-bottom:24px}
+.projects .project-list{gap:24px}
+.projects .project{
+  grid-template-columns:minmax(350px,.9fr) 1.1fr;
+  gap:5vw;
+  align-items:center;
+}
+.project-visual{height:min(41vh,340px)}
+.project-copy h3{font-size:clamp(30px,3vw,46px);line-height:1.02;margin:10px 0 12px}
+.project-copy p{font-size:14px;line-height:1.5}
+.project-copy div{margin-top:16px;flex-wrap:wrap}
+.project>b{display:none}
+
+/* Character never blocks the content */
+body[data-chapter="0"] .astronaut-wrap{width:min(22vw,290px);height:44vh;right:3vw;top:23vh;opacity:.9}
+body[data-chapter="1"] .astronaut-wrap{width:170px;height:260px;right:2.5vw;top:9vh;opacity:.58}
+body[data-chapter="2"] .astronaut-wrap,
+body[data-chapter="3"] .astronaut-wrap{opacity:0;transform:scale(.7);visibility:hidden}
+body[data-chapter="4"] .astronaut-wrap{width:190px;height:290px;right:4vw;top:12vh;opacity:.55}
+
+/* Action has its own quiet zone */
+.travel-next{
+  position:absolute;
+  right:7vw;
+  bottom:24px;
+  min-width:190px;
+  text-align:center;
+  padding:14px 18px;
+}
+
+@media(max-height:820px) and (min-width:901px){
+  .chapter:not(.hero):not(.contact){padding-top:30px}
+  .section-heading{margin-bottom:18px}
+  .section-heading h2{font-size:clamp(38px,3.8vw,58px)}
+  .timeline-item{padding:12px 0}
+  .timeline-item p{font-size:13px}
+  .skill-card{height:46vh;min-height:280px}
+  .skill-orb{width:100px;height:100px;margin:18px auto}
+  .project-visual{height:36vh}
+}
+@media(max-width:900px){
+  .chapter:not(.hero):not(.contact){padding:42px 6vw 100px}
+  .section-heading h2{font-size:42px}
+  .timeline{width:100%;margin:0}
+  .timeline-item{grid-template-columns:95px 1fr;gap:14px}
+  .timeline-item>span{display:none}
+  .skill-grid{grid-template-columns:1fr;overflow-y:auto;scrollbar-width:none}
+  .skill-card{height:250px;min-height:250px}
+  .projects .project{grid-template-columns:1fr}
+  .project-visual{height:260px}
+  body[data-chapter] .astronaut-wrap{opacity:0;visibility:hidden}
+}
